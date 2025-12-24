@@ -1,16 +1,23 @@
-# React + Vite
+# 🗳️ Ethereum Voting System (DApp)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+이더리움 스마트 컨트랙트를 활용하여 후보자에게 투표하고, 투표 결과를 실시간으로 블록체인에서 조회하는 탈중앙화 애플리케이션(DApp)입니다.
 
-Currently, two official plugins are available:
+## 🛠 사용 기술
+- **Smart Contract:** Solidity (v0.8.17)
+- **Frontend:** React (Vite)
+- **Library:** Ethers.js (v6)
+- **Local Blockchain:** Ganache
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 주요 기능
+- **후보자 조회:** 블록체인에 등록된 후보자 리스트와 득표수를 실시간으로 로드
+- **투표 기능:** 가나슈 계정을 이용해 특정 후보자에게 투표 (트랜잭션 발생)
+- **데이터 무결성:** 모든 투표 결과는 블록체인 네트워크에 기록됨
 
-## React Compiler
+## ⚙️ 실행 방법
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. 가나슈(Ganache) 실행
+- RPC Server: `http://127.0.0.1:7545` 확인
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. 컨트랙트 컴파일 및 배포
+```bash
+node deploy.mjs
